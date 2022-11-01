@@ -1,40 +1,4 @@
 from abc import ABC, abstractmethod
-
-# how to create an object from a class 
-# object_name =className(arg)
-# but abstract classes cant be instantiated
-
-class User:
-    first_name = ""
-    last_name = ""
-    email = ""
-    alias = ""
-    password = ""
-    id = ""
-
-class UserAbstract(ABC):
-    @abstractmethod
-    def create_user(self, ):
-        pass 
-
-    @abstractmethod
-    def get_all_users(self):
-        pass
-    @abstractmethod
-    def get_user_by_id(self, user_id):
-        pass
-
-class UserManager(UserAbstract):
-        def create_user(self, user:User):
-            print('user information')
-        
-        def get_all_users(self):
-            print("hello tiny! we are getting all users here")
-        
-        def get_user_by_id(self, user_id):
-            first_name = "Olamide"
-            last_name = "Ahmed"
-            print(f"hello world {first_name} {last_name} {user_id}")
 class Product:
     product_type = ""
     product_name = ""
@@ -42,35 +6,46 @@ class Product:
     product_quantity = ""
     product_size = ""
     product_color = ""
+    product_id = 0
+    product_image = ""
 
 class ProductAbstract(ABC):
 
     @abstractmethod
-    def Select_product(self):
+    def Create_product(self):
+        pass
+    @abstractmethod
+    def Edit_product(self):
+        pass
+    @abstractmethod
+    def Get_product_by_id(self):
+        pass
+    @abstractmethod
+    def Upload_product_image(self):
+        pass
+    @abstractmethod
+    def Delete_product(self):
         pass
 
-    @abstractmethod
-    def Add_to_cart(self):
-        pass
-
-    @abstractmethod
-    def Select_color(self,):
-        pass
 
 class ProductManager(ProductAbstract):
-        def Select_product(self, product_name):
-            print(f"Your selected products are {product_name}")
-        def Add_to_cart(self, product_quantity):
+        def Create_product(self, product_name):
+            print(f"Your products are {product_name}")
+        def Edit_product(self, product_quantity):
             print(f"{product_quantity} quantity have been added to your cart")
-        def Select_color(self, product_color):
-            print(f"Product color is {product_color}")
+        def Get_product_by_id(self, product_id):
+            print(f"Product id is {product_id}")
+        def Upload_product_image(self, product_image):
+            print(f"product image {product_image}")
+        def Delete_product(self,):
+            print(f"product deleted")
 
-user_manager = UserManager()
-user_manager.get_all_users()
-user_manager.get_user_by_id(78)
+
 
 
 product_manager = ProductManager()
-product_manager.Select_product("Omo detergent")
-product_manager.Select_color("Blue")
-product_manager.Add_to_cart(5)
+product_manager.Create_product("Omo detergent")
+product_manager.Edit_product("Blue")
+product_manager.Get_product_by_id(5)
+product_manager.Upload_product_image("")
+product_manager.Delete_product()
