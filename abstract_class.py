@@ -21,6 +21,9 @@ class ProductAbstract(ABC):
     def Get_product_by_id(self):
         pass
     @abstractmethod
+    def Get_all_products(self):
+        pass
+    @abstractmethod
     def Upload_product_image(self):
         pass
     @abstractmethod
@@ -31,12 +34,19 @@ class ProductAbstract(ABC):
 class ProductManager(ProductAbstract):
         def Create_product(self, product_name):
             print(f"Your products are {product_name}")
+
         def Edit_product(self, product_quantity):
             print(f"{product_quantity} quantity have been added to your cart")
+
         def Get_product_by_id(self, product_id):
             print(f"Product id is {product_id}")
+
+        def Get_all_products(self):
+            print(f"Products {self}")
+
         def Upload_product_image(self, product_image):
             print(f"product image {product_image}")
+            
         def Delete_product(self,):
             print(f"product deleted")
 
@@ -47,5 +57,6 @@ product_manager = ProductManager()
 product_manager.Create_product("Omo detergent")
 product_manager.Edit_product("Blue")
 product_manager.Get_product_by_id(5)
+product_manager.get_all_products()
 product_manager.Upload_product_image("")
 product_manager.Delete_product()
