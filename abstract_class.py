@@ -42,11 +42,11 @@ class ProductManager(ProductAbstract):
             print(f"Product id is {product_id}")
 
         def Get_all_products(self):
-            print(f"Products {self}")
+            print(f"These are all your products")
 
         def Upload_product_image(self, product_image):
             print(f"product image {product_image}")
-            
+
         def Delete_product(self,):
             print(f"product deleted")
 
@@ -57,6 +57,6 @@ product_manager = ProductManager()
 product_manager.Create_product("Omo detergent")
 product_manager.Edit_product("Blue")
 product_manager.Get_product_by_id(5)
-product_manager.get_all_products()
+product_manager.Get_all_products()
 product_manager.Upload_product_image("")
 product_manager.Delete_product()
